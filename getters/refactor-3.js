@@ -9,7 +9,7 @@ const obj1 = {
 const obj2 = {
   entries: { first: "bye!", second: "hi!" },
   currentKey: "first",
-  getCurrentEntry: function() {
+  get currentEntry() {
     return this.entries[this.currentKey];
   }
 };
@@ -19,7 +19,7 @@ const obj2 = {
 const obj1current1 = obj1.getCurrentEntry();
 console.assert(obj1current1 === "bye!", "Test 1");
 
-const obj2current1 = obj2.getCurrentEntry();
+const obj2current1 = obj2.currentEntry;
 console.assert(obj2current1 === "bye!", "Test 2");
 
 obj1.currentKey = "first";
@@ -28,5 +28,5 @@ obj2.currentKey = "second";
 const obj1current2 = obj1.getCurrentEntry();
 console.assert(obj1current2 === "hi!", "Test 3");
 
-const obj2current2 = obj2.getCurrentEntry();
+const obj2current2 = obj2.currentEntry;
 console.assert(obj2current2 === "hi!", "Test 4");
